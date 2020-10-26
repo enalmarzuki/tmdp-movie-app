@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import axios from "axios";
-import { RootPath, APIKey } from "../../../services/Config";
+import { connect } from "react-redux";
+import { userLogin } from "../../../config/Redux/action";
 
-import "./Home.scss";
+// Style
+import "./Login.scss";
 
-export default class index extends Component {
+class Login extends Component {
   state = {
     username: "",
     password: "",
@@ -14,57 +15,30 @@ export default class index extends Component {
     this.setState({
       [e.target.id]: e.target.value,
     });
-    console.log("state => ", this.state);
   };
 
-  login = (e) => {
+  login = async () => {
     let data = {
       username: this.state.username,
       password: this.state.password,
     };
-
-    axios
-      .get(`${RootPath}/authentication/token/new?api_key=${APIKey}`)
-      .then((res) => {
-        const request_token = res.data.request_token;
-        data.request_token = request_token;
-        console.log("data => ", data);
-
-        axios({
-          method: "post",
-          url: `${RootPath}/authentication/token/validate_with_login?api_key=${APIKey}`,
-          data: data,
-          headers: { "Content-Type": "application/json" },
-        })
-          .then((res) => {
-            console.log(res.data);
-            if (res.data.success === true) {
-              this.props.history.push("/home-user");
-            }
-          })
-          .catch((err) => console.log(err));
-      })
-      .catch((err) => console.log(err));
+    await this.props.userLogin(data);
   };
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.isLogin && props.sessionId !== "") {
+      props.history.push("/");
+    }
+    return null;
+  }
+
+  componentDidMount() {}
+
   render() {
     return (
       <div className="container">
         <div className="row  w-50">
           <div className="col-md-9">
-            {/* <form> */}
-            {/* <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text" id="basic-addon1">
-                  @
-                </span>
-              </div>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Username"
-                aria-label="Username""
-              />
-            </div> */}
             <div className="form-group">
               <label htmlFor="username" className="text-white">
                 Username
@@ -96,10 +70,24 @@ export default class index extends Component {
             >
               Login
             </button>
-            {/* </form> */}
           </div>
         </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    isLogin: state.isLogin,
+    sessionId: state.sessionId,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    userLogin: (data) => dispatch(userLogin(data)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

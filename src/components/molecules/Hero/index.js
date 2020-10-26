@@ -27,6 +27,10 @@ export default class Hero extends Component {
       .catch((err) => console.log(err));
   };
 
+  detailMovie = (id) => {
+    return this.props.history.push(`/detail-movie/${id}`);
+  };
+
   closeOverlay = () => {
     const heroOverlay = document.querySelector("#hero-overlay");
     heroOverlay.classList.toggle("show");
@@ -37,23 +41,46 @@ export default class Hero extends Component {
 
   render() {
     const src = `https://www.youtube.com/watch?v=${this.state.key}`;
+
+    if (this.props.detailPage) {
+    }
+
     return (
       <div className="container hero-container">
         <div className="row justify-content-center">
           <div className="col-md-12">
             <Fade delay={500}>
-              <p className="title-hero mb-2">Movies that are trending lately</p>
+              {this.props.isLogin ? (
+                <p className="title-hero mb-2">Trending this week</p>
+              ) : (
+                <p className="title-hero mb-2">
+                  Movies that are trending lately
+                </p>
+              )}
 
               <h1 className="title-hero mb-3">
                 {this.props.data.original_title}
               </h1>
               <p className="title-hero ">{this.props.data.overview}</p>
-              <button
-                className="btn btn-danger"
-                onClick={() => this.watchTrailer(this.props.data.id)}
-              >
-                Watch Trailer
-              </button>
+              <div className="btn-wrapper">
+                <Button
+                  className="btn btn-danger"
+                  onClick={() => this.watchTrailer(this.props.data.id)}
+                >
+                  Watch Trailer
+                </Button>
+
+                {!this.props.isLogin ? (
+                  <div></div>
+                ) : (
+                  <Button
+                    className="btn btn-secondary"
+                    onClick={() => this.detailMovie(this.props.data.id)}
+                  >
+                    Info Detail
+                  </Button>
+                )}
+              </div>
             </Fade>
             <div className="hero-overlay" id="hero-overlay">
               <Button

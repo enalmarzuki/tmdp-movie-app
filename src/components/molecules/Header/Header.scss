@@ -1,0 +1,25 @@
+// header {
+//   position: relative;
+//   z-index: 9;
+// }
+
+header {
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+
+  nav {
+    .container {
+      .collapse {
+        ul {
+          li.nav-item.active {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

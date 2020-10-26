@@ -1,0 +1,7 @@
+export const GET_MOVIE_TRANDING_DAY = "GET_MOVIE_TRANDING_DAY";
+
+export const SET_SESSION_ID = "SET_SESSION_ID";
+
+export const LOGIN = "LOGIN";
+
+export const GET_POPULAR_MOVIE = "GET_POPULAR_MOVIE";

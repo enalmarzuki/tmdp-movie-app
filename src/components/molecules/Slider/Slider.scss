@@ -1,0 +1,82 @@
+.slider-container {
+  h3 {
+    margin-bottom: 10px;
+  }
+  .slider-content {
+    overflow: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    transition: ease-in all 0.3s;
+    padding: 20px 0;
+    .card {
+      border-radius: 7px;
+      display: inline-block;
+      margin-right: 20px;
+      transition: 0.3s;
+      &:hover {
+        background-color: rebeccapurple;
+      }
+    }
+    .btn-next,
+    .btn-prev {
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+  .slider-container {
+    .slider-content {
+      overflow-x: hidden;
+
+      &:hover {
+        .btn-prev,
+        .btn-next {
+          visibility: visible;
+        }
+      }
+
+      .btn-prev {
+        outline: none;
+        border: none;
+        position: absolute;
+        top: 130px;
+        left: 15px;
+        bottom: 90px;
+        background: rgba($color: #585858, $alpha: 0.5);
+        color: white;
+        visibility: hidden;
+        transition: 0.3s;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        z-index: 1;
+        &:hover {
+          background: rgba($color: #585858, $alpha: 0.8);
+        }
+      }
+
+      .btn-next {
+        outline: none;
+        border: none;
+        position: absolute;
+        top: 130px;
+        bottom: 90px;
+        right: 15px;
+        background: rgba($color: #585858, $alpha: 0.5);
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        color: white;
+        visibility: hidden;
+        transition: 0.3s;
+        z-index: 1;
+        &:hover {
+          background: rgba($color: #585858, $alpha: 0.8);
+        }
+      }
+    }
+  }
+}

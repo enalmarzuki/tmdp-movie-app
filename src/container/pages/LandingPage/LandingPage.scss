@@ -1,47 +1,4 @@
 .landingPage {
-  .backdrop {
-    position: absolute;
-    &::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(
-        to bottom,
-        rgb(19, 19, 19),
-        rgba(0, 0, 0, 0)
-      );
-      position: absolute;
-      bottom: 0;
-    }
-
-    .img-backdrop {
-      width: 100%;
-      height: 100vh;
-    }
-  }
-
-  header {
-    color: white;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 2;
-
-    nav {
-      .container {
-        .collapse {
-          ul {
-            li.nav-item.active {
-              font-weight: bold;
-            }
-          }
-        }
-      }
-    }
-  }
-
   .hero {
     position: relative;
     z-index: 1;
@@ -49,10 +6,16 @@
     // tempat hero.scss sebelum di refactor
 
     .moviedb-container {
-      height: 100vh !important;
+      // height: 100vh !important;
       .moviedb-wrapper {
         display: flex;
         flex-direction: row;
+      }
+
+      .slider-content {
+        .card {
+          width: 18rem;
+        }
       }
     }
   }
