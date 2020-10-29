@@ -108,7 +108,10 @@ class LandingPage extends Component {
                         <Card
                           title={popularMovie.original_title}
                           thumb={popularMovie.backdrop_path}
+                          id={popularMovie.id}
+                          {...this.props}
                           key={i}
+                          movie
                         />
                       );
                     })}
@@ -126,7 +129,10 @@ class LandingPage extends Component {
                         <Card
                           title={topRatedMovie.original_title}
                           thumb={topRatedMovie.backdrop_path}
+                          id={topRatedMovie.id}
+                          {...this.props}
                           key={i}
+                          movie
                         />
                       );
                     })}
@@ -144,7 +150,10 @@ class LandingPage extends Component {
                         <Card
                           title={upcomingMovie.original_title}
                           thumb={upcomingMovie.backdrop_path}
+                          id={upcomingMovie.id}
+                          {...this.props}
                           key={i}
+                          movie
                         />
                       );
                     })}

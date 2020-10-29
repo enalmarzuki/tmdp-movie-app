@@ -37,10 +37,11 @@ export default function DetailMovie(props) {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     getMovieDetail(id);
     getCredits(id);
     return () => {
-      console.log("Unmount");
+      // console.log("Unmount");
     };
   }, [id]);
 
@@ -65,14 +66,15 @@ export default function DetailMovie(props) {
     (lang) => lang.code === data.original_language
   );
 
+  // console.log("Data => ", data);
   if (data === "") {
     return <Loading />;
   }
 
   return (
     <div className="detail-page">
-      <Header {...props} isLogin={true}></Header>
       <Backdrop backdrop={data.backdrop_path} />
+      <Header {...props} isLogin={true}></Header>
 
       <div className="container detail-hero">
         <div className="row align-items-center detail-row mt-5 ">
@@ -114,6 +116,8 @@ export default function DetailMovie(props) {
                     title={actress.name}
                     thumb={actress.profile_path}
                     as={actress.character}
+                    id={actress.id}
+                    {...props}
                   />
                 </div>
               );

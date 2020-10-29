@@ -1,0 +1,15 @@
+.detail-person {
+  color: white;
+  padding-top: 20px;
+  .person-container {
+    min-height: 100vh;
+    .poster-detail-person {
+      border: 5px solid white;
+      border-radius: 5px;
+    }
+  }
+
+  .biography-wrapper {
+    min-height: 100vh;
+  }
+}

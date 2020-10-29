@@ -1,5 +1,6 @@
 .backdrop {
   position: absolute;
+
   &::after {
     content: "";
     display: block;
