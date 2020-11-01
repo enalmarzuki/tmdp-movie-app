@@ -5,3 +5,5 @@ export const SET_SESSION_ID = "SET_SESSION_ID";
 export const LOGIN = "LOGIN";
 
 export const GET_POPULAR_MOVIE = "GET_POPULAR_MOVIE";
+
+export const SEARCH_MOVIE = "SEARCH_MOVIE";

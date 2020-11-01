@@ -73,6 +73,7 @@ class LandingPage extends Component {
   // }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.getMovieDay();
     this.getPopularMovie();
     this.topMovie();
@@ -198,6 +199,7 @@ const mapStateToProps = (state) => {
     data: state.data,
     isLogin: state.isLogin,
     sessionId: state.sessionId,
+    resSearchMovie: state.resultMovies,
   };
 };
 

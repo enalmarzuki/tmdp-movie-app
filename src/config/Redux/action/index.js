@@ -114,3 +114,19 @@ export const getUpcomingMovie = () => (dispatch) => {
       });
   });
 };
+
+export const getSearchMovies = (keyword, page) => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(
+        `${RootPath}/search/movie?api_key=${APIKey}&language=en-US&query=${keyword}&page=${page}`
+      )
+      .then((res) => {
+        resolve(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+        reject(err);
+      });
+  });
+};

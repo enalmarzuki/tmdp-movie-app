@@ -19,6 +19,35 @@ header {
             font-weight: bold;
           }
         }
+
+        .search-wrapper {
+          display: flex;
+
+          .icon-search {
+            border-top-left-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;
+            padding: 0 5px;
+          }
+
+          .icon-search.show {
+            background: rgb(54, 54, 54);
+          }
+
+          .input-search {
+            width: 0;
+            padding: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border: 0;
+            transition: ease 0.5s all;
+          }
+
+          .input-search.show {
+            width: 200px;
+            padding: 16px;
+            transition: ease 0.5s all;
+          }
+        }
       }
     }
   }

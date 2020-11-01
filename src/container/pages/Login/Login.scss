@@ -1,0 +1,12 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .form-wrapper {
+    background: rgba(48, 48, 48, 0.363);
+    padding: 100px 30px;
+    border-radius: 10px;
+  }
+}

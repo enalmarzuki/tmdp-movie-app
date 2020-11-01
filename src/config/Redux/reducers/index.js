@@ -1,10 +1,16 @@
-import { GET_MOVIE_TRANDING_DAY, SET_SESSION_ID, LOGIN } from "../type";
+import {
+  GET_MOVIE_TRANDING_DAY,
+  SET_SESSION_ID,
+  LOGIN,
+  SEARCH_MOVIE,
+} from "../type";
 
 const initialState = {
   data: "",
   isLogin: true,
   sessionId: "",
   isLoading: true,
+  resultMovies: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -25,6 +31,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLogin: action.value,
+      };
+
+    case SEARCH_MOVIE:
+      return {
+        ...state,
+        resultMovies: action.value,
       };
 
     default:
