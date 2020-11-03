@@ -65,11 +65,11 @@ export default function Header(props) {
                   Home
                 </Button>
               </li>
-              <li className={`nav-item${getNavLinkClass("/browse-by")}`}>
+              {/* <li className={`nav-item${getNavLinkClass("/browse-by")}`}>
                 <Button className="nav-link" type="link" href="/browse-by">
                   Browse By
                 </Button>
-              </li>
+              </li> */}
             </ul>
 
             <div className="search-wrapper ml-auto">

@@ -7,74 +7,38 @@ export default function Footer() {
     <footer>
       <div className="container">
         <div className="row">
-          <div className="col-md-3 mb-4">
+          <div className="col mb-4">
             <h2>MovieDB</h2>
             <p className="brand-tagline">
-              We kaboom your beauty holiday instantly and memorable
+              Millions of movies, TV shows and people to discover. Explore now.
             </p>
           </div>
 
-          <div className="col-md-3 mb-4">
-            <h6 className="mt-2 footer-title">For Beginner</h6>
+          <div className="col-md-3 mb-4 ml-auto">
+            <h6 className="mt-2 footer-title">Built Using</h6>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">
-                <Button type="link" href="/register">
-                  New Account
-                </Button>
-              </li>
-              <li className="list-group-item">
-                <Button type="link" href="/properties">
-                  Start Booking a Room
-                </Button>
-              </li>
-              <li className="list-group-item">
-                <Button type="link" href="/use-payment">
-                  Use Payments
-                </Button>
-              </li>
+              <li className="list-group-item">React JS</li>
+              <li className="list-group-item">The Movie Database API</li>
             </ul>
           </div>
 
           <div className="col-md-3 mb-4">
-            <h6 className="mt-2 footer-title">Explore Us</h6>
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">
-                <Button type="link" href="/careers">
-                  Our Careers
-                </Button>
-              </li>
-              <li className="list-group-item">
-                <Button type="link" href="/privacy">
-                  Privacy
-                </Button>
-              </li>
-              <li className="list-group-item">
-                <Button type="link" href="/terms">
-                  Terms & Conditions
-                </Button>
-              </li>
-            </ul>
-          </div>
-
-          <div className="col-md-3 mb-4">
-            <h6 className="mt-2 footer-title">Connect Us</h6>
+            <h6 className="mt-2 footer-title">Built By</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
                 <Button
-                  isExternal
                   type="link"
-                  href="mailto:support@staycation.id"
+                  href="https://id.linkedin.com/in/enal-marzuki-6a12a91a3"
+                  isExternal
+                  target="_blank"
                 >
-                  support@staycation.id
+                  Marzuki . R
                 </Button>
               </li>
               <li className="list-group-item">
-                <Button isExternal type="link" href="tel:+622122081996">
-                  021 - 2208 - 1996
+                <Button type="link" isDisabled>
+                  Makassar , Sulawesi Selatan
                 </Button>
-              </li>
-              <li className="list-group-item">
-                <span>Staycation, Makassar, Sulsel</span>
               </li>
             </ul>
           </div>

@@ -28,20 +28,11 @@ class LandingPage extends Component {
     upcomingMovies: [],
   };
 
-  // getBackdrop = (backdrop) => {
-  //   const linkBackdrop = `${BackdropPath}/${backdrop}`;
-  //   this.setState({
-  //     backdrop: linkBackdrop,
-  //   });
-  // };
-
   getMovieDay = async () => {
     let time = "";
     this.props.isLogin ? (time = "week") : (time = "day");
-    // const time = "day";
+
     await this.props.movieTrandingDay(time);
-    // const backdrop = this.props.data.backdrop_path;
-    // this.getBackdrop(backdrop);
   };
 
   getPopularMovie = async () => {
@@ -94,7 +85,6 @@ class LandingPage extends Component {
         <Header {...this.props} isLogin={isLogin}></Header>
 
         <div className="hero">
-          {/* hero */}
           <Hero data={data} key={key} isLogin={isLogin} {...this.props} />
 
           <div className="container moviedb-container pb-5">
@@ -162,31 +152,6 @@ class LandingPage extends Component {
                 </Fade>
               </div>
             </div>
-
-            {/* <div className="row text-white">
-              <div className="moviedb-wrapper">
-                <div className="col-md-6 moviedb-desc align-self-center">
-                  <Fade delay={500}>
-                    <h3 className="mb-3">
-                      Join our community, and find your favorite movies
-                    </h3>
-                    <Button className="btn px-4" isDanger>
-                      Click Me
-                    </Button>
-                  </Fade>
-                </div>
-
-                <div className="col-md-6 moviedb-img">
-                  <Fade delay={500}>
-                    <img
-                      src={Cinema}
-                      className="cimena-img w-100"
-                      alt="Cinema"
-                    />
-                  </Fade>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
